@@ -3,3 +3,6 @@
 #include "CrazyDrift.h"
 
 IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, CrazyDrift, "CrazyDrift" );
+
+//General Log
+DEFINE_LOG_CATEGORY(LogCrazyDrift);

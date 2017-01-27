@@ -13,7 +13,7 @@ class CRAZYDRIFT_API ACrazyDriftGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
-	
-	
+public:
+	ACrazyDriftGameModeBase();	
 	
 };
