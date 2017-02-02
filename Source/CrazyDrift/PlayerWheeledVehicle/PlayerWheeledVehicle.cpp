@@ -41,8 +41,9 @@ APlayerWheeledVehicle::APlayerWheeledVehicle()
 
 	// Create the chase camera component
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
-	Camera->SetProjectionMode(ECameraProjectionMode::Orthographic);
-	Camera->SetOrthoWidth(7500.0f);
+	Camera->SetProjectionMode(ECameraProjectionMode::Perspective);
+	Camera->SetFieldOfView(30.0f);
+	//Camera->SetOrthoWidth(7500.0f);
 	Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
 	Camera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 }
