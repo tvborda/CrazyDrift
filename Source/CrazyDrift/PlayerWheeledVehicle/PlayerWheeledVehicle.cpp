@@ -7,9 +7,9 @@
 #include "Vehicles/VehicleWheel.h"
 
 const TCHAR* APlayerWheeledVehicle::VehicleSkeletalMeshPath = TEXT("SkeletalMesh'/Game/Vehicles/SimpleCar/Models/SimpleCar.SimpleCar'");
-const TCHAR* APlayerWheeledVehicle::VehicleAnimClassPath = TEXT("AnimBlueprint'/Game/Animations/SimpleCar_AnimBlueprint.SimpleCar_AnimBlueprint_C'");
-const TCHAR* APlayerWheeledVehicle::VehicleWheelFrontClassPath = TEXT("Blueprint'/Game/Blueprints/PlayerWheeledVehicle/BP_VehicleWheel_Front.BP_VehicleWheel_Front_C'");
-const TCHAR* APlayerWheeledVehicle::VehicleWheelBackClassPath = TEXT("Blueprint'/Game/Blueprints/PlayerWheeledVehicle/BP_VehicleWheel_Back.BP_VehicleWheel_Back_C'");
+const TCHAR* APlayerWheeledVehicle::VehicleAnimClassPath = TEXT("AnimBlueprint'/Game/Vehicles/SimpleCar/Animations/SimpleCar_AnimBlueprint.SimpleCar_AnimBlueprint_C'");
+const TCHAR* APlayerWheeledVehicle::VehicleWheelFrontClassPath = TEXT("Blueprint'/Game/Vehicles/SimpleCar/Blueprints/BP_VehicleWheel_Front.BP_VehicleWheel_Front_C'");
+const TCHAR* APlayerWheeledVehicle::VehicleWheelBackClassPath = TEXT("Blueprint'/Game/Vehicles/SimpleCar/Blueprints/BP_VehicleWheel_Back.BP_VehicleWheel_Back_C'");
 
 APlayerWheeledVehicle::APlayerWheeledVehicle()
 {
@@ -35,7 +35,7 @@ APlayerWheeledVehicle::APlayerWheeledVehicle()
 	SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
 	SpringArm->SetupAttachment(RootComponent);
 	SpringArm->bAbsoluteRotation = true; // Don't want arm to rotate when character does
-	SpringArm->TargetArmLength = 7500.f;
+	SpringArm->TargetArmLength = 8000.0f;
 	SpringArm->RelativeRotation = FRotator(-30.f, 45.f, 0.f);
 	SpringArm->bDoCollisionTest = false; // Don't want to pull camera in when it collides with level
 
@@ -43,7 +43,6 @@ APlayerWheeledVehicle::APlayerWheeledVehicle()
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetProjectionMode(ECameraProjectionMode::Perspective);
 	Camera->SetFieldOfView(30.0f);
-	//Camera->SetOrthoWidth(7500.0f);
 	Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
 	Camera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 }
