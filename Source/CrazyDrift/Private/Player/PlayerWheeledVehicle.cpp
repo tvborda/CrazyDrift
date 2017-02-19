@@ -36,7 +36,7 @@ APlayerWheeledVehicle::APlayerWheeledVehicle()
 	SpringArm->SetupAttachment(RootComponent);
 	SpringArm->bAbsoluteRotation = true; // Don't want arm to rotate when character does
 	SpringArm->TargetArmLength = 8000.0f;
-	SpringArm->RelativeRotation = FRotator(-30.f, 45.f, 0.f);
+	SpringArm->RelativeRotation = FRotator(-30.f, -45.f, 0.f);
 	SpringArm->bDoCollisionTest = false; // Don't want to pull camera in when it collides with level
 
 	// Create the chase camera component
